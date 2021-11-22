@@ -108,9 +108,11 @@ function addPost (iPost) {
 
 
 }
-let button = document.getElementsByClassName('like-button');
+
+let button = [];
+button = document.getElementsByClassName('like-button');
 for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', function(){ 
-    button[i].classList.add('liked');
+    button[i].classList.add('like-button--liked');
 })
 }
