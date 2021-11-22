@@ -68,6 +68,8 @@ constructPost();
 function constructPost () {
     for(let i = 0; i < posts.length; i++) {
         addPost(posts[i])
+        buttonClick();
+        // insertLike();
     }
 }
 
@@ -94,25 +96,48 @@ function addPost (iPost) {
             <div class="post__footer">
                 <div class="likes js-likes">
                     <div class="likes__cta">
-                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <a class="like-button  js-like-button" data-postid="1">
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                             <span class="like-button__label">Mi Piace</span>
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${iPost.likes}</b> persone
+                        Piace a <b id="like-counter-${iPost.id}" class="js-likes-counter">${iPost.likes}</b> persone
                     </div>
                 </div> 
             </div>            
         </div>`
 
-
 }
 
-let button = [];
-button = document.getElementsByClassName('like-button');
-for (let i = 0; i < button.length; i++) {
-    button[i].addEventListener('click', function(){ 
-    button[i].classList.add('like-button--liked');
-})
+
+function buttonClick() {
+    let button = [];
+    button = document.getElementsByClassName('like-button');
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener('click', function () {
+            const likeCounter = document.getElementById(`like-counter-${i + 1}`);
+            let likeInt = parseInt(likeCounter.innerHTML);
+
+            if (!(this.classList.contains("like-button--liked"))) {
+                this.classList.add("like-button--liked");
+                likeInt += 1;
+            } else {
+                this.classList.remove("like-button--liked");
+                likeInt -= 1;
+            }
+
+            likeCounter.innerHTML = likeInt;
+        });
+    }
 }
+
+
+// function insertLike() {
+
+//     const likeBtn = document.getElementsByClassName("like-button");
+
+//     for (let i = 0; i < likeBtn.length; i++) {
+
+//     }
+// }
