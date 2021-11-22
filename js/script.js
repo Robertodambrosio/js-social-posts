@@ -71,10 +71,6 @@ function constructPost () {
     }
 }
 
-
-
-
-
 //========================== creazione della card dinamica 
 function addPost (iPost) {
     const container = document.getElementById('container');
@@ -109,4 +105,11 @@ function addPost (iPost) {
                 </div> 
             </div>            
         </div>`
+
+
 }
+
+let button = document.getElementsByClassName('like-button');
+button.addEventListener('click', function(){ 
+    button.classList.add('liked');
+})
