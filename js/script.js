@@ -59,7 +59,6 @@ const posts = [
     }
 ];
 
-
 console.log(posts);
 
 constructPost();
@@ -69,7 +68,6 @@ function constructPost () {
     for(let i = 0; i < posts.length; i++) {
         addPost(posts[i])
         buttonClick();
-        // insertLike();
     }
 }
 
@@ -85,7 +83,7 @@ function addPost (iPost) {
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${iPost.author["name"]}</div>
-                        <div class="post-meta__time">4 mesi fa</div>
+                        <div class="post-meta__time">${iPost.created}</div>
                     </div>                    
                 </div>
             </div>
@@ -133,11 +131,4 @@ function buttonClick() {
 }
 
 
-// function insertLike() {
 
-//     const likeBtn = document.getElementsByClassName("like-button");
-
-//     for (let i = 0; i < likeBtn.length; i++) {
-
-//     }
-// }
