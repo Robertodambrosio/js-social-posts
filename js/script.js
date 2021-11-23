@@ -83,7 +83,7 @@ function addPost (iPost) {
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${iPost.author["name"]}</div>
-                        <div class="post-meta__time">${iPost.created}</div>
+                        <div class="post-meta__time">${invertDate(iPost.created)}</div>
                     </div>                    
                 </div>
             </div>
@@ -131,4 +131,6 @@ function buttonClick() {
 }
 
 
-
+function invertDate(myDate) {
+    return myDate.split("-").reverse().join('/');
+}
