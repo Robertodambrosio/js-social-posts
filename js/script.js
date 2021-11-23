@@ -79,7 +79,7 @@ function addPost (iPost) {
             <div class="post__header">
                 <div class="post-meta">                    
                     <div class="post-meta__icon">
-                        <img class="profile-pic" src=${iPost.media} alt=${iPost.author["name"]}>                    
+                        <img class="profile-pic" src=${iPost.author["image"]} alt=${iPost.author["name"]}>                    
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${iPost.author["name"]}</div>
@@ -89,7 +89,7 @@ function addPost (iPost) {
             </div>
             <div class="post__text">${iPost.content}</div>
             <div class="post__image">
-                <img src=${iPost.author["image"]} alt="">
+                <img src=${iPost.media} alt="">
             </div>
             <div class="post__footer">
                 <div class="likes js-likes">
